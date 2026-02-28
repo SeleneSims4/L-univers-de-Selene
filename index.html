@@ -441,6 +441,159 @@
   </div>
 </div>
 
+<!-- ═══ NOTE INTRO ═══ -->
+<div style="max-width:800px; margin:0 auto; padding:3rem 2rem 0; text-align:center;">
+  <div style="border:1px solid rgba(201,184,232,0.15); padding:2rem 2.5rem; background:rgba(124,77,190,0.06); position:relative;">
+    <div style="position:absolute; top:0; left:50%; transform:translateX(-50%) translateY(-50%; ">
+    </div>
+    <div style="font-size:1.5rem; margin-bottom:1rem;">💜</div>
+    <div style="font-family:'Playfair Display',serif; font-style:italic; font-size:1rem; color:var(--blanc-casse); line-height:1.8; margin-bottom:1rem;">
+      Note importante avant de commencer
+    </div>
+    <div style="font-size:0.72rem; line-height:2; color:rgba(240,236,255,0.6);">
+      Tout ce que tu trouveras sur ce site — les palettes, les espaces, les CC, les inspirations — est là uniquement pour <span style="color:var(--violet-pastel);">t'aider à comprendre l'univers et l'ambiance de Selene</span>. Ce n'est pas une liste d'obligations ! Il n'y a aucun problème si le résultat final ne ressemble pas à 100% aux références, si certains CC ne sont pas utilisés, ou si tu as de meilleures idées. L'objectif c'est juste de te donner une direction, une atmosphère, une âme. <span style="color:var(--violet-pastel);">Fais confiance à ta créativité 🖤</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ GALERIE ═══ -->
+<section>
+  <span class="section-label">00 — Simself</span>
+  <h2 class="section-title">Selene en Images</h2>
+</section>
+
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <!-- Photos x2 pour le défilement infini -->
+    <div class="ticker-item"><img src="Selene1.png" alt="Selene 1"></div>
+    <div class="ticker-item"><img src="Selene2.png" alt="Selene 2"></div>
+    <div class="ticker-item"><img src="Selene3.png" alt="Selene 3"></div>
+    <div class="ticker-item"><img src="Selene4.png" alt="Selene 4"></div>
+    <div class="ticker-item"><img src="Selene5.png" alt="Selene 5"></div>
+    <div class="ticker-item"><img src="Selene6.png" alt="Selene 6"></div>
+    <div class="ticker-item"><img src="Selene7.png" alt="Selene 7"></div>
+    <div class="ticker-item"><img src="Selene8.png" alt="Selene 8"></div>
+    <div class="ticker-item"><img src="Selene9.png" alt="Selene 9"></div>
+    <div class="ticker-item"><img src="Selene10.png" alt="Selene 10"></div>
+    <div class="ticker-item"><img src="Selene11.png" alt="Selene 11"></div>
+    <div class="ticker-item"><img src="Selene12.png" alt="Selene 12"></div>
+    <div class="ticker-item"><img src="Selene13.png" alt="Selene 13"></div>
+    <div class="ticker-item"><img src="Selene14.png" alt="Selene 14"></div>
+    <div class="ticker-item"><img src="Selene15.png" alt="Selene 15"></div>
+    <!-- Doublon pour boucle infinie -->
+    <div class="ticker-item"><img src="Selene1.png" alt="Selene 1"></div>
+    <div class="ticker-item"><img src="Selene2.png" alt="Selene 2"></div>
+    <div class="ticker-item"><img src="Selene3.png" alt="Selene 3"></div>
+    <div class="ticker-item"><img src="Selene4.png" alt="Selene 4"></div>
+    <div class="ticker-item"><img src="Selene5.png" alt="Selene 5"></div>
+    <div class="ticker-item"><img src="Selene6.png" alt="Selene 6"></div>
+    <div class="ticker-item"><img src="Selene7.png" alt="Selene 7"></div>
+    <div class="ticker-item"><img src="Selene8.png" alt="Selene 8"></div>
+    <div class="ticker-item"><img src="Selene9.png" alt="Selene 9"></div>
+    <div class="ticker-item"><img src="Selene10.png" alt="Selene 10"></div>
+    <div class="ticker-item"><img src="Selene11.png" alt="Selene 11"></div>
+    <div class="ticker-item"><img src="Selene12.png" alt="Selene 12"></div>
+    <div class="ticker-item"><img src="Selene13.png" alt="Selene 13"></div>
+    <div class="ticker-item"><img src="Selene14.png" alt="Selene 14"></div>
+    <div class="ticker-item"><img src="Selene15.png" alt="Selene 15"></div>
+  </div>
+</div>
+
+<!-- Lightbox -->
+<div id="lightbox" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.92); z-index:9999; justify-content:center; align-items:center; cursor:zoom-out;" onclick="this.style.display='none'">
+  <img id="lightbox-img" src="" style="max-width:90vw; max-height:90vh; border:1px solid rgba(201,184,232,0.2); box-shadow:0 0 60px rgba(124,77,190,0.4);">
+</div>
+
+<style>
+  .ticker-wrap {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 1rem 0 3rem;
+  }
+  /* Fondu gauche et droite */
+  .ticker-wrap::before,
+  .ticker-wrap::after {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 120px;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .ticker-wrap::before {
+    left: 0;
+    background: linear-gradient(to right, var(--noir), transparent);
+  }
+  .ticker-wrap::after {
+    right: 0;
+    background: linear-gradient(to left, var(--noir), transparent);
+  }
+
+  .ticker-track {
+    display: flex;
+    gap: 1rem;
+    width: max-content;
+    animation: ticker-scroll 45s linear infinite;
+  }
+  .ticker-track:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes ticker-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .ticker-item {
+    flex-shrink: 0;
+    width: 240px;
+    height: 320px;
+    overflow: hidden;
+    border: 1px solid rgba(201,184,232,0.08);
+    position: relative;
+    cursor: zoom-in;
+    transition: border-color 0.3s;
+  }
+  .ticker-item:hover {
+    border-color: rgba(201,184,232,0.3);
+  }
+  .ticker-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(124,77,190,0.2), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .ticker-item:hover::after { opacity: 1; }
+  .ticker-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+    filter: grayscale(15%);
+  }
+  .ticker-item:hover img {
+    transform: scale(1.05);
+    filter: grayscale(0%);
+  }
+</style>
+
+<script>
+  document.querySelectorAll('.ticker-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const lb = document.getElementById('lightbox');
+      const img = document.getElementById('lightbox-img');
+      img.src = item.querySelector('img').src;
+      lb.style.display = 'flex';
+    });
+  });
+</script>
+
+<div class="divider">✦ ✦ ✦</div>
+
 <!-- ═══ PALETTE ═══ -->
 <section>
   <span class="section-label">01 — Identité Chromatique</span>
@@ -786,6 +939,274 @@
 
   </div>
 </section>
+
+<!-- ═══ CC & INSPI ═══ -->
+<section>
+  <span class="section-label">07 — CC Recommandés</span>
+  <h2 class="section-title">Téléchargements & Inspiration</h2>
+
+  <!-- EXTÉRIEUR -->
+  <div style="margin-bottom:3rem;">
+    <div style="font-size:0.6rem; letter-spacing:0.4em; color:var(--or-punk); text-transform:uppercase; margin-bottom:1.5rem; display:flex; align-items:center; gap:1rem;">
+      <span>🏰</span> Extérieur — Manoir Victorien
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1rem;">
+
+      <a href="https://www.thesimsresource.com/members/MychQQQ/downloads/details/category/sims4-lots-residential/title/old-victorian-manor/" target="_blank" class="cc-card">
+        <div class="cc-icon">🏰</div>
+        <div class="cc-info">
+          <div class="cc-name">Old Victorian Manor</div>
+          <div class="cc-author">par MychQQQ</div>
+          <div class="cc-desc">Le plus proche du manoir de Selene. Façade en pierre, tourelles, jardin devant.</div>
+          <div class="cc-site">thesimsresource.com →</div>
+        </div>
+      </a>
+
+      <a href="https://www.curseforge.com/sims4/lots/victorian-manor" target="_blank" class="cc-card">
+        <div class="cc-icon">🌿</div>
+        <div class="cc-info">
+          <div class="cc-name">Victorian Manor</div>
+          <div class="cc-author">par PlumbobKingdom</div>
+          <div class="cc-desc">Plus de 13 000 téléchargements. Jardin, façade pierre, très proche de l'inspi.</div>
+          <div class="cc-site">curseforge.com →</div>
+        </div>
+      </a>
+
+      <a href="https://www.thesimsresource.com/downloads/search/?q=victorian+garden&gentype=lots&game=sims4" target="_blank" class="cc-card">
+        <div class="cc-icon">🌸</div>
+        <div class="cc-info">
+          <div class="cc-name">Victorian Garden Lots</div>
+          <div class="cc-author">TSR — recherche</div>
+          <div class="cc-desc">Tous les lots victoriens avec jardin sur The Sims Resource, filtrés pour toi.</div>
+          <div class="cc-site">thesimsresource.com →</div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- INTÉRIEUR DARK -->
+  <div style="margin-bottom:3rem;">
+    <div style="font-size:0.6rem; letter-spacing:0.4em; color:var(--or-punk); text-transform:uppercase; margin-bottom:1.5rem; display:flex; align-items:center; gap:1rem;">
+      <span>🕯️</span> Intérieur — Déco Dark & Cosy
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1rem;">
+
+      <a href="https://www.musthavemods.com/sims-4-gothic-furniture-cc/" target="_blank" class="cc-card">
+        <div class="cc-icon">💀</div>
+        <div class="cc-info">
+          <div class="cc-name">Gothic Furniture CC Pack</div>
+          <div class="cc-author">Must Have Mods</div>
+          <div class="cc-desc">Crânes, bougies fonctionnelles, lits à baldaquin, cheminées, miroirs gothiques.</div>
+          <div class="cc-site">musthavemods.com →</div>
+        </div>
+      </a>
+
+      <a href="https://sixam.cc" target="_blank" class="cc-card">
+        <div class="cc-icon">🌑</div>
+        <div class="cc-info">
+          <div class="cc-name">SIXAMCC</div>
+          <div class="cc-author">sixam.cc</div>
+          <div class="cc-desc">Style Maxis Match dark, mis à jour régulièrement. Parfait pour un rendu cohérent.</div>
+          <div class="cc-site">sixam.cc →</div>
+        </div>
+      </a>
+
+      <a href="https://www.tumblr.com/search/sims+4+dark+academia+cc" target="_blank" class="cc-card">
+        <div class="cc-icon">📚</div>
+        <div class="cc-info">
+          <div class="cc-name">Dark Academia CC</div>
+          <div class="cc-author">Simblr Tumblr</div>
+          <div class="cc-desc">Bibliothèques, bureaux en bois sombre, bougies, tapis persans. Coin lecture parfait.</div>
+          <div class="cc-site">tumblr.com →</div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- SETUP GAMER -->
+  <div style="margin-bottom:3rem;">
+    <div style="font-size:0.6rem; letter-spacing:0.4em; color:var(--or-punk); text-transform:uppercase; margin-bottom:1.5rem; display:flex; align-items:center; gap:1rem;">
+      <span>🎮</span> Setup Gamer Fonctionnel
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1rem;">
+
+      <a href="https://www.thesimsresource.com/downloads/search/?q=gaming+setup&gentype=objects&game=sims4" target="_blank" class="cc-card">
+        <div class="cc-icon">💻</div>
+        <div class="cc-info">
+          <div class="cc-name">Gaming Setup CC</div>
+          <div class="cc-author">The Sims Resource</div>
+          <div class="cc-desc">PC double/triple écran fonctionnel, bureau, chaise gaming. Tous fonctionnels en jeu.</div>
+          <div class="cc-site">thesimsresource.com →</div>
+        </div>
+      </a>
+
+      <a href="https://www.wewantmods.com/sims-4-gaming-room-cc/" target="_blank" class="cc-card">
+        <div class="cc-icon">🕹️</div>
+        <div class="cc-info">
+          <div class="cc-name">31 Gaming Room CC</div>
+          <div class="cc-author">We Want Mods</div>
+          <div class="cc-desc">Liste complète et organisée : écrans, consoles PS5/Switch fonctionnelles, leds, clutter.</div>
+          <div class="cc-site">wewantmods.com →</div>
+        </div>
+      </a>
+
+      <a href="https://www.curseforge.com/sims4/search?search=gaming+room+dark" target="_blank" class="cc-card">
+        <div class="cc-icon">🎧</div>
+        <div class="cc-info">
+          <div class="cc-name">Dark Gaming Room</div>
+          <div class="cc-author">CurseForge</div>
+          <div class="cc-desc">Chambres gamer complètes à télécharger, style sombre avec leds violettes.</div>
+          <div class="cc-site">curseforge.com →</div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- PRESET GSHADE -->
+  <div>
+    <div style="font-size:0.6rem; letter-spacing:0.4em; color:var(--or-punk); text-transform:uppercase; margin-bottom:1.5rem; display:flex; align-items:center; gap:1rem;">
+      <span>🎨</span> Preset Graphique Recommandé
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1rem;">
+
+      <a href="https://boosty.to/rouxsims/posts/89813ede-20f0-488e-b561-537785602dbf" target="_blank" class="cc-card accent-card">
+        <div class="cc-icon">💜</div>
+        <div class="cc-info">
+          <div class="cc-name">Dark Fantasy — GShade Preset</div>
+          <div class="cc-author">par rouxsims4</div>
+          <div class="cc-desc">Le preset recommandé par ta buildeuse ! Version Dark + version Light disponibles. Rend les screenshots magnifiques.</div>
+          <div class="cc-site">boosty.to →</div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+</section>
+
+<style>
+  .cc-card {
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem;
+    border: 1px solid rgba(201,184,232,0.1);
+    background: var(--gris-verre);
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.3s, transform 0.3s, background 0.3s;
+    position: relative;
+  }
+  .cc-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--violet-fonce), var(--violet-moyen), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .cc-card:hover {
+    border-color: rgba(201,184,232,0.35);
+    transform: translateY(-3px);
+    background: rgba(124,77,190,0.1);
+  }
+  .cc-card:hover::before { opacity: 1; }
+  .accent-card { border-color: rgba(200,169,110,0.25); }
+  .accent-card::before { background: linear-gradient(90deg, var(--rouge-metal), var(--or-punk), transparent); }
+  .accent-card:hover { border-color: rgba(200,169,110,0.5); background: rgba(200,169,110,0.06); }
+  .cc-icon { font-size: 1.8rem; flex-shrink: 0; }
+  .cc-name {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 0.72rem;
+    color: var(--blanc-casse);
+    margin-bottom: 0.2rem;
+  }
+  .cc-author {
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+    color: var(--violet-moyen);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+  }
+  .cc-desc {
+    font-size: 0.65rem;
+    line-height: 1.7;
+    color: rgba(240,236,255,0.55);
+    margin-bottom: 0.7rem;
+  }
+  .cc-site {
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+    color: var(--or-punk);
+    text-transform: uppercase;
+  }
+</style>
+
+<!-- ═══ BOUTON MUSIQUE ═══ -->
+<audio id="bgmusic" loop>
+  <source src="numbthefeelings-dark-ambient-relaxing-instrumental-445781.mp3" type="audio/mpeg">
+</audio>
+
+<button id="musicBtn" onclick="toggleMusic()" title="Musique de fond">
+  ♪
+</button>
+
+<style>
+  #musicBtn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid rgba(201,184,232,0.3);
+    background: rgba(74,45,122,0.6);
+    color: var(--violet-pastel);
+    font-size: 1.2rem;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    z-index: 999;
+    transition: all 0.3s;
+    box-shadow: 0 0 20px rgba(124,77,190,0.3);
+  }
+  #musicBtn:hover {
+    background: rgba(124,77,190,0.8);
+    box-shadow: 0 0 30px rgba(124,77,190,0.6);
+    transform: scale(1.1);
+  }
+  #musicBtn.playing {
+    animation: musicPulse 2s ease-in-out infinite;
+    border-color: rgba(201,184,232,0.6);
+  }
+  @keyframes musicPulse {
+    0%, 100% { box-shadow: 0 0 20px rgba(124,77,190,0.3); }
+    50% { box-shadow: 0 0 40px rgba(124,77,190,0.7); }
+  }
+</style>
+
+<script>
+  let playing = false;
+  const audio = document.getElementById('bgmusic');
+  const btn = document.getElementById('musicBtn');
+  audio.volume = 0.4;
+
+  function toggleMusic() {
+    if (!playing) {
+      audio.play();
+      btn.textContent = '⏸';
+      btn.classList.add('playing');
+      playing = true;
+    } else {
+      audio.pause();
+      btn.textContent = '♪';
+      btn.classList.remove('playing');
+      playing = false;
+    }
+  }
+</script>
 
 <!-- ═══ FOOTER ═══ -->
 <footer>
